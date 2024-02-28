@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import SubList from "../components/sublist.tsx";
+import { openMenu } from "../../store";
+import Nav from "../components/nav.tsx";
+import Menu from "../components/menu.tsx";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body class="max-w-[1600px] mx-auto bg-primary">
+    <header class="flex gap-28 py-8 justify-between items-center px-4">
+      <h1 class="text-4xl font-bold">snap</h1>
+      <Nav client:load />
+    </header>
+
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  *,
+  html {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 500; */
+    font-style: normal;
+  }
+  a {
+    position: relative;
+  }
+
+  li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+  }
+
+  li::before {
+    margin-right: 1rem;
+  }
+
+  @media (min-width: 768px) {
+  }
+</style>

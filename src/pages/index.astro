@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/default.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Layout>
+      <main class="lg:grid grid-cols-2 relative md:px-16 -z-50 py-10">
+        <picture class="order-2">
+          <source
+            media="(min-width:768px)"
+            class="max-h-[100px]"
+            srcset="/src/images/image-hero-desktop.png"
+          />
+
+          <img
+            src="/src/images/image-hero-mobile.png"
+            alt="hero image"
+            loading="eager"
+            class="max-h-[600px] w-full mx-auto"
+            decoding="async"
+            style="width:auto;"
+          />
+        </picture>
+        <section
+          class="text-center lg:text-left space-y-4 lg:space-y-16 pt-8 order-1"
+        >
+          <h2 class="text-4xl font-semibold md:text-7xl leading-16 text-wrap">
+            Make <br class="hidden lg:block" /> remote work
+          </h2>
+          <p
+            class="text-primary-gray text-[18px] text-balance md:text-wrap line-clamp-3"
+          >
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a
+            href="#learn more"
+            class="text-white bg-black rounded-lg block w-fit mx-auto lg:mx-0 lg:px-8 px-5 py-4"
+            >Learn more</a
+          >
+          <div class="flex justify-between items-center px-4">
+            {
+              [
+                "/src/images/client-databiz.svg",
+                "/src/images/client-audiophile.svg",
+                "/src/images/client-maker.svg",
+                "/src/images/client-meet.svg",
+              ].map((img) => (
+                <Image
+                  src={img}
+                  height={100}
+                  width={50}
+                  loading={"eager"}
+                  alt="sponsor-icon"
+                  class="w-24 h-10"
+                />
+              ))
+            }
+          </div>
+        </section>
+      </main>
+    </Layout>
+  </body>
+</html>
