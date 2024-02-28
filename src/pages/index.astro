@@ -24,7 +24,7 @@ import Layout from "../layouts/default.astro";
           <img
             src="/src/images/image-hero-mobile.png"
             alt="hero image"
-            loading="eager"
+            loading="lazy"
             class="max-h-[600px] w-full mx-auto"
             decoding="async"
             style="width:auto;"
@@ -59,7 +59,6 @@ import Layout from "../layouts/default.astro";
                   src={img}
                   height={100}
                   width={50}
-                  loading={"eager"}
                   alt="sponsor-icon"
                   class="w-24 h-10"
                 />
