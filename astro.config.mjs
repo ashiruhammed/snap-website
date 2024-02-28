@@ -9,5 +9,10 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "hybrid",
-  adapter: netlify(),
+  experimental: {
+    hybridOutput: true,
+  },
+  adapter: vercel({
+    imageService: true,
+  }),
 });
