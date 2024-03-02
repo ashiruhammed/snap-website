@@ -18,11 +18,11 @@ import Layout from "../layouts/default.astro";
           <source
             media="(min-width:768px)"
             class="max-h-[100px]"
-            srcset="/src/images/image-hero-desktop.png"
+            srcset="/src/image-hero-desktop.png"
           />
 
           <img
-            src="/src/images/image-hero-mobile.png"
+            src="/src/image-hero-mobile.png"
             alt="hero image"
             loading="lazy"
             class="max-h-[600px] w-full mx-auto"
@@ -50,10 +50,10 @@ import Layout from "../layouts/default.astro";
           <div class="flex justify-between items-center px-4">
             {
               [
-                "/src/images/client-databiz.svg",
-                "/src/images/client-audiophile.svg",
-                "/src/images/client-maker.svg",
-                "/src/images/client-meet.svg",
+                "/src/client-databiz.svg",
+                "/src/client-audiophile.svg",
+                "/src/client-maker.svg",
+                "/src/client-meet.svg",
               ].map((img) => (
                 <Image
                   src={img}
